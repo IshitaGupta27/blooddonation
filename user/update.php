@@ -176,21 +176,21 @@
 			if(preg_match($pattern, $_POST['email']))
 			{
         		$check_email=$_POST['email'];
-            	$sql="SELECT Email FROM blooddonation WHERE Email='$check_email' ";
-            	$result=mysqli_query($connection,$sql);
-            	if(mysqli_num_rows($result)>0)
-            	{
-              		$emailError = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					<strong>Sorry this email already exists.</strong>
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		  			<span aria-hidden="true">&times;</span>
-					</button>
-	  				</div>';
-	  			}
-	        	else
-            	{
-               		$email=$_POST['email'];
-            	}
+            	#$sql="SELECT Email FROM blooddonation WHERE Email='$check_email' ";
+            	#$result=mysqli_query($connection,$sql);
+            	#if(mysqli_num_rows($result)>0)
+            	#{
+              	#	$emailError = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		#			<strong>Sorry this email already exists.</strong>
+		#			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		 # 			<span aria-hidden="true">&times;</span>
+		#			</button>
+	  	#			</div>';
+	  	#		}
+	        #	else
+            	#{
+               	#	$email=$_POST['email'];
+            	#}
         	}
         	else
         	{
@@ -221,7 +221,7 @@
 			$sql="UPDATE  blooddonation SET Name='$name',Blood_Group='$blood_group',Gender='$gender',DOB='$dob',Email='$email',Contact_no='$contact',City='$city' WHERE ID='$_SESSION=['user_id']'";
 			if (mysqli_query($connection,$sql)) 
 			{    
-				header("Location: update.php.php");
+				header("Location: update.php");
 					
 			}
 			else
