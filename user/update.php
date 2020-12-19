@@ -2,7 +2,7 @@
 	
 	include 'include/header.php';
 	include 'include/config.php';
-	include 'include/sidebar.php';
+	//include 'include/sidebar.php';
 	if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']))
 	{
 		$sql = "SELECT * from blooddonation WHERE id=".$_SESSION['user_id'];
@@ -217,8 +217,9 @@
 		if (isset($name) && isset($blood_group) && isset($gender) && isset($day) && isset($month) && isset($year) && isset($email) && isset($contact) && isset($city)) 
 		{
 			$DonorDOB = $year."-".$month."-".$day;
+			$id = $_SESSION['user_id'];
 
-			$sql="UPDATE  blooddonation SET Name='$name',Blood_Group='$blood_group',Gender='$gender',DOB='$dob',Email='$email',Contact_no='$contact',City='$city' WHERE ID='$_SESSION=['user_id']'";
+			$sql="UPDATE  blooddonation SET Name='$name',Blood_Group='$blood_group',Gender='$gender',DOB='$dob',Email='$check_email',Contact_no='$contact',City='$city' WHERE ID='$id' ";
 			if (mysqli_query($connection,$sql)) 
 			{    
 				header("Location: update.php");
@@ -226,12 +227,13 @@
 			}
 			else
 			{
-				$updateError = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-				<strong>Data not updated. Try again.</strong>
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		  		<span aria-hidden="true">&times;</span>
-				</button>
-	  			</div>';
+				echo mysqli_error($connection);
+				#$updateError = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				#<strong>Data not updated. Try again.</strong>
+				#<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  		#<span aria-hidden="true">&times;</span>
+				#</button>
+	  			#</div>';
 			}
 		}
 	}
