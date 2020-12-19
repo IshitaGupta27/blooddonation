@@ -2,7 +2,7 @@
 	
 	include 'include/header.php';
 	include 'include/config.php';
-	//include 'include/sidebar.php';
+	include 'include/sidebar.php';
 	if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']))
 	{
 		$sql = "SELECT * from blooddonation WHERE id=".$_SESSION['user_id'];
