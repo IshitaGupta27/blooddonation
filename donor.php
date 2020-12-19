@@ -103,7 +103,7 @@
 
 			while($row = mysqli_fetch_assoc($result)){
 
-				if($row['save_life_date']=='0'){
+				if($row['save_life_date']=='0' OR $row['save_the_life']==''){
 
 					echo '
 					<div class="col-md-3 col-sm-12 col-lg-3 donors_data">
