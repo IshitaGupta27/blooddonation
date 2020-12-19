@@ -57,7 +57,7 @@
 						<p class="text-center pera-text">
 							Our nation requires 4 crore units of blood while only 40 lakhs units are available. Every two seconds someone needs blood. There is no substitute for human blood. It cannot be manufactured. Blood donation is an extremely noble deed, yet there is a scarcity of regular blood donors across India. We focus on creating & expanding a virtual army of blood donating volunteers who could be searched and contacted by famiy of the patient in times of need.
 						</p>
-						<a href="#" class="btn btn-default btn-lg text-center center-aligned">Become a Life Saver!</a>
+						<a href="donate.php" class="btn btn-default btn-lg text-center center-aligned">Become a Life Saver!</a>
 					</div>
 				</div>
 			</div>
